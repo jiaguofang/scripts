@@ -1,0 +1,94 @@
+set showcmd
+
+set nocompatible
+
+set backspace=indent,eol,start
+
+set history=50
+
+set nowrap
+
+set completeopt=longest,menu
+
+set autochdir
+
+set sessionoptions=curdir
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+"""""""""""""""""""""""""""""""""""""""""""""
+" set colorscheme
+colorscheme desert
+
+set t_Co=256
+
+" enable syntax highlight
+syntax enable
+syntax on
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" Interface
+"""""""""""""""""""""""""""""""""""""""""""""
+" show ruler
+set ruler
+
+" dynamic title
+set title
+
+" turn on Wild menu
+set wildmenu
+
+" display line number
+set nu
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" Search
+"""""""""""""""""""""""""""""""""""""""""""""
+" enbale magic matching
+set magic
+
+" show matching bracets
+set showmatch
+
+" ignore case when search things
+set smartcase
+set ignorecase
+
+" highlight search and incremental search
+set hlsearch
+set incsearch
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" Indent
+"""""""""""""""""""""""""""""""""""""""""""""
+" auto indent
+set autoindent
+
+" smart indent
+set smartindent
+
+" use hard tabs
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set softtabstop=4
+
+" break long lines
+set textwidth=80
+
+" set auto-formatting
+set formatoptions+=mM
+
+" config c-indenting
+set cinoptions=:0,l1,t0,g0
+
+
+" enable filetype plugin
+filetype plugin indent on
+
+" set textwidth for mail
+autocmd FileType mail set textwidth=72
+
+" use soft tabs for python
+autocmd FileType python set et sta ts=4 sw=4
