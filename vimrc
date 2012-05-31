@@ -42,7 +42,7 @@ set wildmenu
 set nu
 
 """""""""""""""""""""""""""""""""""""""""""""
-" Search 
+" Search
 """""""""""""""""""""""""""""""""""""""""""""
 " enbale magic matching
 set magic
