@@ -9,7 +9,7 @@ Update Manager-Settings->Software Sources-Ubuntu Software-Download from:Other->S
 sudo apt-get purge scim #为了防止scim与fcitx冲突，如果你安装了scim，你最好卸载掉scim
 sudo add-apt-repository ppa:fcitx-team/nightly
 sudo apt-get update
-sudo apt-get install fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin
+sudo apt-get install fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin
 sudo apt-get install fcitx-table-all #同时安装其他码表
 im-switch -s fcitx -z default  #设为默认输入法，一般不需要，除非系统有多个输入法 
 
