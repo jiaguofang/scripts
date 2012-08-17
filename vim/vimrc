@@ -75,7 +75,7 @@ set expandtab
 set softtabstop=4
 
 " break long lines
-set textwidth=80
+" set textwidth=80
 
 " set auto-formatting
 set formatoptions+=mM
