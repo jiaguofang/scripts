@@ -1,11 +1,7 @@
-#############################################
-# 选择最优源
-#############################################
+##### 选择最优源 #####
 Update Manager-Settings->Software Sources-Ubuntu Software-Download from:Other->Select best Server
 
-#############################################
-# 安装fcitx输入法
-#############################################
+##### 安装fcitx输入法 #####
 sudo apt-get purge scim #为了防止scim与fcitx冲突，如果你安装了scim，你最好卸载掉scim
 sudo add-apt-repository ppa:fcitx-team/nightly
 sudo apt-get update
@@ -13,61 +9,55 @@ sudo apt-get install fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin f
 sudo apt-get install fcitx-table-all #同时安装其他码表
 im-switch -s fcitx -z default  #设为默认输入法，一般不需要，除非系统有多个输入法 
 
-#############################################
-# 安装雅黑字体
-#############################################
+##### 安装雅黑字体 #####
 wget -O get-fonts.sh.zip http://files.cnblogs.com/DengYangjun/get-fonts.sh.zip
 unzip -o get-fonts.sh.zip 1>/dev/null
 chmod a+x get-fonts.sh
 ./get-fonts.sh
 rm get-fonts.sh get-fonts.sh.zip 2>/dev/null #删除下载的字体安装脚本文件
 
-#############################################
-# 安装google chrome
-#############################################
+##### 安装google chrome #####
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 sudo apt-get update
 sudo apt-get install google-chrome-stable
 
-#############################################
-# 安装JDK 6
-#############################################
+##### 安装JDK 6 #####
 sudo add-apt-repository ppa:ferramroberto/java
 sudo apt-get update
 sudo apt-get install sun-java6-jdk
 sudo update-alternatives --config java #设置当前默认的java解释器和编译器：(如果没有安装多个java虚拟机的话可以跳过这一步)
 
-#############################################
-# 设置java环境变量
-#############################################
+##### 设置java环境变量 #####
 # 把下面三条语句添加到~/.bashrc末尾
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-#############################################
-# 安装eclipse
-#############################################
+##### 安装eclipse #####
 sudo apt-get install eclipse eclipse-cdt
 
-#############################################
-# 安装flash player(for chrome 64 bit)和Adobe Reader
-#############################################
+##### 安装flash player(for chrome 64 bit)和Adobe Reader #####
 sudo apt-add-repository "deb http://archive.canonical.com/ubuntu oneiric partner"
 sudo apt-get update
 sudo apt-get install adobe-flashplugin acroread
 
-#############################################
-# 笔记本无法保存屏幕亮度的解决办法
-#############################################
+##### 笔记本无法保存屏幕亮度的解决办法 #####
 sudo vim /etc/rc.local #在echo 0前加上echo 7 > /sys/class/backlight/acpi_video0/brightness，其中echo后面的值为0-10，对应为0到100%，如echo 5表示一半亮度
 
-#############################################
-# 安装jekyll
-#############################################
+##### 安装jekyll #####
 sudo apt-get install ruby
 sudo apt-get install rubygems
 sudo gem install jekyll
 sudo gem install rdiscount
 sudo apt-get install python-pygments #高亮
+
+##### 安装wireshark #####
+sudo apt-get install wireshark
+sudo groupadd wireshark
+sudo usermod -a -G wireshark YOUR_USER_NAME
+sudo chgrp wireshark /usr/bin/dumpcap
+sudo chmod 750 /usr/bin/dumpcap
+sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/dumpcap
+sudo getcap /usr/bin/dumpcap
+sudo chmod +xs /usr/bin/dumpcap
