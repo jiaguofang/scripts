@@ -51,6 +51,8 @@ sudo apt-get install rubygems
 sudo gem install jekyll
 sudo gem install rdiscount
 sudo apt-get install python-pygments #高亮
+sudo vim /var/lib/gems/1.8/specifications/directory_watcher-1.4.1.gemspec # jekyll --server --auto
+                                                                          # change s.date = %q{2011-08-30 00:00:00.000000000Z} to s.date = %q{2011-08-30}
 
 ##### 安装wireshark #####
 sudo apt-get install wireshark
